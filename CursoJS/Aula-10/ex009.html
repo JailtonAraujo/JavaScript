@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+
+    <style>
+        body{
+            font: normal 18pt Arial;
+            text-align: center;
+            
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+
+        div#res{
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Somando</h1>
+    <input type="number" name="textn1" id="textn1"> + 
+    <input type="number" name="textn2" id="textn2">
+    <input type="button" value="Somar" id="BtnClick" onclick="Validar()">
+    <div id="res"> Resultado</div>
+
+    <script>
+       
+
+        var tn1 = document.getElementById('textn1');
+        var tn2 = document.querySelector('input#textn2');
+        var res = document.querySelector('div#res');
+        //var BtnSoma = document.querySelector('input#BtnClick');
+
+        function Validar(){
+            var num1 = Number(tn1.value);
+            var num2 = Number(tn2.value);
+
+            if((num1 == '' || tn1.value.Number <= 0)|| (num2 == '' || tn2.value.Number <= 0)){
+                alert('Numeros Invalidos!');
+                
+            }else{
+                somar();
+            }
+        }
+
+        function somar(){
+
+        var num1 = Number(tn1.value);
+        var num2 = Number(tn2.value);
+
+        var soma = num1 + num2;
+        res.innerHTML = `A soma entre ${num1} e ${num2} é igual a <strong>${soma}</strong>`;
+        }
+    </script>
+</body>
+
+</html>
